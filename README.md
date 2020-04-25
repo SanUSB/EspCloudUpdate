@@ -1,0 +1,2 @@
+# EspCloudUpdate
+Download and install the sample library .zip available on this link https://github.com/SanUSB/EspCloudUpdate To install the library, follow the steps: Arduino IDE -> Sketch -> Include Library -> Add .zip Libraries. Unzip the .zip folder and open the example CloudUpdateStart.ino. Write the name of your profile and WiFi network in the sketch. Update the sketch only the first time using the USB port. So it is now possible to transfer over the internet generating the .bin file.  For this, go to Sketch menu of the Arduino IDE > Export compiled Binary.
