@@ -1,19 +1,9 @@
-# EspCloudUpdate
+# EspCloudUpdate [![N|Solid](http://sanusb.blogspot.com.br/favicon.ico)](http://sanusb.org/)
 Download and install the sample library .zip available on this link https://github.com/SanUSB/EspCloudUpdate To install the library, follow the steps: Arduino IDE -> Sketch -> Include Library -> Add .zip Libraries. Unzip the .zip folder and open the example CloudUpdateStart.ino. Write the name of your profile and WiFi network in the sketch. Update the sketch only the first time using the USB port. So it is now possible to transfer over the internet generating the .bin file.  For this, go to Sketch menu of the Arduino IDE > Export compiled Binary.
 
-# EspCloudUpdate [![N|Solid](http://sanusb.blogspot.com.br/favicon.ico)](http://sanusb.org/)
-
-AsyncIOT provides:
+EspCloudUpdate provides:
 
   - an UNIVERSAL HMI (human-machine interface) environment (for ESP32 and ESP8266) in order to interact with processed inputs and outputs using any browser through HTML pages. As an example, the input parameters values are converted to integers, added, multiplied and the results are shown in the output parameters. The number of input and output parameters is also set by the user. 
-
-  - This environment also makes it possible to update the firmware *.bin* via WiFi OTA (*Over the Air*). To generate a .bin file from your sketch, go to Sketch menu of the Arduino IDE > Export compiled Binary.
-
- # AsyncIOT [![N|Solid](http://sanusb.blogspot.com.br/favicon.ico)](http://sanusb.org/)
-
-AsyncIOT provides:
-
-  - an UNIVERSAL HMI (human-machine interface) environment sketch for ESP32 and ESP8266 in order to interact with processed inputs and outputs using any browser through HTML pages. As an example, the input parameters values are converted to integers, added, multiplied and the results are shown in the output parameters. The number of input and output parameters is also set by the user. 
 
   - This environment also makes it possible to update the firmware *.bin* via WiFi OTA (*Over the Air*). To generate a .bin file from your sketch, go to Sketch menu of the Arduino IDE > Export compiled Binary.
 
