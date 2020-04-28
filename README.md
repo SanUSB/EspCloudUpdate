@@ -40,7 +40,7 @@ It is worth considering that, through tests carried out, files compiled .bin as 
 
 For the update condition {if (newVersionInt> InitialVersionInt)}, it is considered between the variables greater than (>) and not different (!=), to ensure that the latest .bin file version is always greater than the previous .bin version and to prevent that variables reading can generate unwanted update trigger during operation.
 
-In summary, download and install the sample library .zip available on this link https://github.com/SanUSB/EspCloudUpdate To install the library, follow the steps: Arduino IDE -> Sketch -> Include Library -> Add .zip Libraries. Unzip the .zip folder and open the example EspUpdateStart.ino. Write the name of your profile and WiFi network in the sketch. Update the sketch only the first time using the USB port. So it is now possible to transfer over the internet generating the .bin file.  For this, go to Sketch menu of the Arduino IDE > Export compiled Binary.
+In summary, download and install the sample library .zip available on this link https://github.com/SanUSB/EspCloudUpdate. To install the library, follow the steps: Arduino IDE -> Sketch -> Include Library -> Add .zip Libraries. Unzip the .zip folder and open the example EspUpdateStart.ino. Write the name of your profile and WiFi network in the sketch. Update the sketch only the first time using the USB port. So it is now possible to transfer over the internet generating the .bin file.  For this, go to Sketch menu of the Arduino IDE > Export compiled Binary.
 
 This project, the loop sketch function is practically free so you can implement your projects and be able to update them in a simple and remote way over the Internet.
  
