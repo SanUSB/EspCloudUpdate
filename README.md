@@ -1,7 +1,5 @@
 # EspCloudUpdate [![N|Solid](http://sanusb.blogspot.com.br/favicon.ico)](http://sanusb.org/)
 
-# Let's see how it works?
-
 This project shows an ESP32 and ESP266 microcontrollers Update Environment for Internet programming with same generic sketch using the website  [sanusb.org/espupdate](http://sanusb.org/espupdate). In this project, the free version of Firebase (Google JSON objects Database) was implemented to generate the cloud update trigger for .bin files. 
 
 To perform this firmware update in the cloud, the users need to write in the sketch only the Wifi ssid, the password and the same name 
