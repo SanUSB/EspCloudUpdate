@@ -1,8 +1,8 @@
 
 //***************This data must be filled in by the user*******************************
-const char* Profile = "test";  // The same profile name on http://sanusb.org/espupdate
-const char* ssid = "SanUSB";   // Wifi 
-const char* password = "sanusblaese19";
+const char* Profile = "----------";  // The same profile name on http://sanusb.org/espupdate
+const char* ssid = "-----------";   // Wifi 
+const char* password = "-----------";
 //*************************************************************************************
 
 #include "EspCloudUpdate.h"
