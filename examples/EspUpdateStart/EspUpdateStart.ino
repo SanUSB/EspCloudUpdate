@@ -64,6 +64,7 @@ void firebase_config(void) {
 //***********************************************************
 void setup() {
   Serial.begin(115200);
+  pinMode(led, OUTPUT);
   wifi_config();
   firebase_config();
 }
