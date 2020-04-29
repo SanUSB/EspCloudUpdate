@@ -9,7 +9,7 @@ const char* password = "-----------";
 
 const int led = 2; //builtin led
 const int TIME_CHECK_UP = 60;
-//const int TIME_CHECK_UP = 7; // only to test
+//const int TIME_CHECK_UP = 5; // only to test
 
 void wifi_config(void) {  
   Serial.println();
