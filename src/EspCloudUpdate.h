@@ -128,7 +128,7 @@ class EspCloudUpdateClass {
         InitialVersionInt = InitialVersionSt.toInt();
 
         //*******************Upload function**********************************    
-        if (newVersionInt > InitialVersionInt || (InitialVersionInt % 10) == 9) {
+        if (newVersionInt > InitialVersionInt || (!(newVersionInt%10) && (InitialVersionInt%10)==9)) {
           // InitialVersionInt = newVersionInt;  
           Serial.println("Preparing to update");
 
@@ -136,7 +136,7 @@ class EspCloudUpdateClass {
           ImageURL.concat(Profile);
           ImageURL.concat("/" + newVersionSt);
           ImageURL.concat(".bin");
-          Serial.print(".bin firmware Adress: ");
+          Serial.print(".bin firmware Address: ");
           Serial.println(ImageURL);
 
           #if defined(ESP8266)
