@@ -4,7 +4,7 @@ This project for all shows an ESP32 and ESP266 microcontrollers Update Environme
 
 The update (OTA) transmits the compiled binary *.bin* files via Internet. To generate a .bin file from your sketch, go to Sketch menu of the Arduino IDE > Export compiled Binary. To perform this cloud firmware update, the users need to write in the sketch only the Wifi ssid, the password and the same name as the profile entered on the site and when uploading the .bin to site, remote firmware update of ESP microcontrollers via the Internet takes place. The user profile name entered on the website [sanusb.org/espupdate](http://sanusb.org/espupdate) may be alphanumeric (for example: sandro190575 or sandrojuca).
 
-It is possible to test this transmission application via the Internet, accessing the site http://sanusb.org/espupdate/ through the laboratory or residence network and the ESP32 / 8266 microcontroller anchored to the smartphone connected to the 4G mobile network, or vice versa.
+It is possible to test this transmission application via the Internet, accessing the site http://sanusb.org/espupdate/ through the laboratory or residence network and the ESP32/ESP8266 microcontroller anchored to the smartphone connected to the 4G mobile network, or vice versa.
 
  To install the ESP32 and ESP8266 boards in Arduino IDE, follow these next instructions:
  In your Arduino IDE, go to File> Preferences. Insert into the "Additional Board Manager URLs":
