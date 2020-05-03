@@ -74,7 +74,7 @@ void setup() {
   String UploadOK = String(Profile);
   UploadOK.concat("OK");
   val=EEPROM.read(addr);
-  //Serial.printf("previous cycle: %d\n", val);
+  Serial.printf("previous cycle: %d\n", val);
   if (val == 255) {
     val = (InitialVersionInt % 10);
     Serial.printf("Welcome!!! To upload, access: sanusb.org/espupdate\n", val);
@@ -82,13 +82,16 @@ void setup() {
   Serial.printf("InitialVersionCicle: %d\n", (InitialVersionInt % 10));
 
   //Incremented code (val+1) & previous Reset -> Upload OK
-  if ((InitialVersionInt % 10) == (val + 1) || ((InitialVersionInt % 10) == 0 && val == 9)) {
+  if ((InitialVersionInt%10) == (val + 1) || ((InitialVersionInt%10)==0 && val==9)) {
     Serial.printf("Upload OK!!!\n");
     if (Firebase.setInt(firebaseData, UploadOK, InitialVersionInt)) 
     {
       Serial.println("Set int data success");
+    }else{
+    //Failed?, get the error reason
+    Serial.print("Error in setInt, ");
+    Serial.println(firebaseData.errorReason());
     }
-
   }
   EEPROM.write(addr, (InitialVersionInt % 10));
   EEPROM.commit();   
