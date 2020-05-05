@@ -1,4 +1,4 @@
-/********************************************************sanusb.org********************************************************
+/**********************************************************sanusb.org*************************************************************
 This project shows an ESP32 and ESP266 microcontrollers Update Environment for Internet programming with same generic sketch 
 using the website sanusb.org/espupdate. In this project, the free version of Firebase (Google JSON objects Database) was 
 implemented to generate the cloud update trigger for .bin files.
@@ -58,10 +58,12 @@ example EspUpdateStart.ino. Write the name of your profile and WiFi network in t
 using the USB port. So it is now possible to transfer over the internet generating the .bin file. For this, go to Sketch menu of 
 the Arduino IDE > Export compiled Binary.
 
+After the update of the .bin file is finished and the microcontroller is automatically reset, the new verification code is sent to 
+http://sanusb.org/espupdate/YourProfile/conf.php in order to confirm the update on the website.
+
 This project, the loop sketch function is practically free so you can implement your projects and be able to update them in a simple 
 and remote way over the Internet.
-
-*****************************************************************************************************************************/
+***********************************************************************************************************************************/
 #ifndef EspClouUpdate_h
 #define EspCloudUpdate_h
 
