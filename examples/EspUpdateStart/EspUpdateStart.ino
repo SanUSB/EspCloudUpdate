@@ -8,6 +8,7 @@ const char* password = "-----------";
 #include "EspCloudUpdate.h"
 #include <EEPROM.h>
 
+const char* confirm = "http://sanusb.org/espupdate/";
 const int led = 2; //builtin led
 //const int TIME_CHECK_UP = 60000;
 const int TIME_CHECK_UP = 5000; // ms only to test
@@ -76,13 +77,13 @@ void setup() {
   val=EEPROM.read(addr);
   Serial.printf("previous cycle: %d\n", val);
   if (val == 255) {
-    val = (InitialVersionInt % 10);
+    val = (InitialVersionInt%10);
     Serial.printf("Welcome!!! To upload, access: sanusb.org/espupdate\n", val);
   }
   Serial.printf("InitialVersionCicle: %d\n", (InitialVersionInt % 10));
 
   //Incremented code (val+1) & previous Reset -> Upload OK
-  if ((InitialVersionInt%10) == (val + 1) || ((InitialVersionInt%10)==0 && val==9)) {
+  if ((InitialVersionInt%10) == (val+1) || ((InitialVersionInt%10)==0 && val==9)) {
     Serial.printf("Upload OK!!!\n");
     if (Firebase.setInt(firebaseData, UploadOK, InitialVersionInt)) 
     {
@@ -92,6 +93,23 @@ void setup() {
     Serial.print("Error in setInt, ");
     Serial.println(firebaseData.errorReason());
     }
+    //***********************************************************/
+    String Jsonconf = String(confirm); //upload confirmation
+    Jsonconf.concat(Profile);
+    Jsonconf.concat("/conf.php?s=");
+    Jsonconf.concat(InitialVersionSt); 
+  
+    httpClient.begin(client, Jsonconf); 
+    int  httpcode = httpClient.GET();
+    if (httpcode <= 0) {
+    Serial.printf("HTTP error: %s\n", 
+    httpClient.errorToString(httpcode).c_str());
+    }
+    // Read the response.
+    String payload = httpClient.getString();
+    //Serial.print("Response HTTP = ");
+    //Serial.println(payload);
+//***********************************************************/    
   }
   EEPROM.write(addr, (InitialVersionInt % 10));
   EEPROM.commit();   
