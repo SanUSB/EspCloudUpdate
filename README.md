@@ -44,7 +44,7 @@ For the update condition {if (newVersionInt> InitialVersionInt)}, it is consider
 
 In summary, download and install the sample library .zip available on https://github.com/SanUSB/EspCloudUpdate and dependencies for ESP8266 (https://github.com/mobizt/Firebase-ESP8266) or ESP32 (https://github.com/mobizt/Firebase-ESP32). To install the librarys, follow the steps: Arduino IDE -> Sketch -> Include Library -> Add .zip Libraries. Unzip the .zip folder and open the example EspUpdateStart.ino. Write the name of your profile and WiFi network in the sketch. Update the sketch only the first time using the USB port. So it is now possible to transfer over the internet generating the .bin file.  For this, go to Sketch menu of the Arduino IDE > Export compiled Binary.
 
-After the update of the .bin file is finished and the microcontroller is automatically reset, the new verification code is sent to the http://sanusb.org/espupdate/*YourProfile*/conf.php in order to confirm the update on the website.
+After the update of the .bin file is finished and the microcontroller is automatically reset, the new verification code is sent to http://sanusb.org/espupdate/*YourProfile*/conf.php in order to confirm the update on the website.
 
 This project, the loop sketch function is practically free so you can implement your projects and be able to update them in a simple and remote way over the Internet. Tutorial: https://youtu.be/En_hFO5f4U8.
  
