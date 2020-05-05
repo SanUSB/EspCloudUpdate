@@ -8,7 +8,6 @@ const char* password = "-----------";
 #include "EspCloudUpdate.h"
 #include <EEPROM.h>
 
-const char* confirm = "http://sanusb.org/espupdate/";
 const int led = 2; //builtin led
 //const int TIME_CHECK_UP = 60000;
 const int TIME_CHECK_UP = 5000; // ms only to test
@@ -94,7 +93,7 @@ void setup() {
     Serial.println(firebaseData.errorReason());
     }
     //***********************************************************/
-    String Jsonconf = String(confirm); //upload confirmation
+    String Jsonconf = String(UrlBase); //upload confirmation
     Jsonconf.concat(Profile);
     Jsonconf.concat("/conf.php?s=");
     Jsonconf.concat(InitialVersionSt); 
