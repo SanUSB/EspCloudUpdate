@@ -77,9 +77,9 @@ void setup() {
   Serial.printf("previous cycle: %d\n", val);
   if (val == 255) {
     val = (InitialVersionInt%10);
-    Serial.printf("Welcome!!! To upload, access: sanusb.org/espupdate\n", val);
+    Serial.printf("Welcome!!! To upload, access: sanusb.org/espupdate\n");
   }
-  Serial.printf("InitialVersionCicle: %d\n", (InitialVersionInt % 10));
+  Serial.printf("InitialVersionCicle: %lu\n", (InitialVersionInt%10));
 
   //Incremented code (val+1) & previous Reset -> Upload OK
   if ((InitialVersionInt%10) == (val+1) || ((InitialVersionInt%10)==0 && val==9)) {
@@ -90,14 +90,14 @@ void setup() {
     }else{
     //Failed?, get the error reason
     Serial.print("Error in setInt, ");
-    Serial.println(firebaseData.errorReason());
+    
     }
     //***********************************************************/
     String Jsonconf = String(UrlBase); //upload confirmation
     Jsonconf.concat(Profile);
     Jsonconf.concat("/conf.php?s=");
     Jsonconf.concat(InitialVersionSt); 
-  
+
     httpClient.begin(client, Jsonconf); 
     int  httpcode = httpClient.GET();
     if (httpcode <= 0) {
@@ -110,7 +110,7 @@ void setup() {
     //Serial.println(payload);
 //***********************************************************/    
   }
-  EEPROM.write(addr, (InitialVersionInt % 10));
+  EEPROM.write(addr, (InitialVersionInt%10));
   EEPROM.commit();   
 }
 //**********************************************************
