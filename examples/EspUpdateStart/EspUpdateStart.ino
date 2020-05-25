@@ -35,8 +35,12 @@ void wifi_config(void) {
     }
   }
   if (WiFi.status() == WL_CONNECTED) {
-    //if you get here you have connected to the WiFi
+    delay(100);
     Serial.println("\nconnected...yesss! :)");
+    Serial.print("Current Profile = ");
+    Serial.println(Profile);
+    Serial.print("IP address: "); 
+    Serial.println(WiFi.localIP());
   } else {
     Serial.println("TimeOut! Not Connected even after 10 Seconds trying...\n *** Something wrong happened. It did not connected... *** ");
   }
