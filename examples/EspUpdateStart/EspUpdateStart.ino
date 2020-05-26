@@ -38,8 +38,8 @@ void wifi_config(void) {
     delay(100);
     Serial.println("\nconnected...yesss! :)");
     Serial.print("Current Profile = ");
-    Serial.println(Profile);
-    Serial.print("IP address: "); 
+    Serial.println(String(Profile));
+    Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
   } else {
     Serial.println("TimeOut! Not Connected even after 10 Seconds trying...\n *** Something wrong happened. It did not connected... *** ");
@@ -125,4 +125,3 @@ void loop() {
   digitalWrite(led, !digitalRead(led));
   delay(TIME_CHECK_UP);
 }
-

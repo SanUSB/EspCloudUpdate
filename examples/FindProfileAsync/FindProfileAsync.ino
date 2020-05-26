@@ -1,16 +1,24 @@
-
+/*
+If you are on the same network and do not know the last profile used, enter the IP in a browser to find out the profile name  
+ */
 //***************This data must be filled in by the user*******************************
 const char* Profile = "----------";  // The same profile name on http://sanusb.org/espupdate
 const char* ssid = "-----------";   // Wifi 
 const char* password = "-----------";
 //*************************************************************************************
-
+#if defined(ESP8266)
+    #include <ESPAsyncTCP.h>
+#elif defined(ESP32)
+    #include <AsyncTCP.h>
+#endif
+#include <ESPAsyncWebServer.h>
+AsyncWebServer server(80);
 #include "EspCloudUpdate.h"
 #include <EEPROM.h>
 
 const int led = 2; //builtin led
-const int TIME_CHECK_UP = 60000;
-//const int TIME_CHECK_UP = 5000; // ms only to test
+//const int TIME_CHECK_UP = 60000;
+const int TIME_CHECK_UP = 5000; // ms only to test
 int addr = 255, val = 0;
 
 void wifi_config(void) {
@@ -44,8 +52,8 @@ void wifi_config(void) {
   } else {
     Serial.println("TimeOut! Not Connected even after 10 Seconds trying...\n *** Something wrong happened. It did not connected... *** ");
   }
+  
 }
-
 void firebase_config(void) {
 
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
@@ -65,7 +73,6 @@ void firebase_config(void) {
     Serial.print("Error in getInt, ");
     Serial.println(firebaseData.errorReason());
   }
-
 }
 //***********************************************************
 void setup() {
@@ -116,6 +123,16 @@ void setup() {
   }
   EEPROM.write(addr, (InitialVersionInt%10));
   EEPROM.commit();   
+//***********************************************************/ 
+server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){ //type only IP address
+         AsyncResponseStream *response = request->beginResponseStream("text/html");
+         response->printf("<meta charset='UTF-8'> <link rel='icon' type='image/x-icon' href='http://sanusb.blogspot.com.br/favicon.ico'/>");
+         response->printf("<h2>Profile Name: %s </h2>", Profile);                              
+         response->printf("<a href='http://sanusb.org/espupdate/'>Esp Cloud Update</a>");
+         request->send(response);
+    });    
+  server.begin();
+  Serial.println("Type the IP in a browser to find out the profile name");
 }
 //**********************************************************
 
