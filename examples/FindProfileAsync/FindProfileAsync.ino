@@ -125,7 +125,7 @@ void setup() {
   EEPROM.write(addr, (InitialVersionInt%10));
   EEPROM.commit();   
 //***********************************************************/ 
-server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){ //type only IP address
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){ //type only IP address
          AsyncResponseStream *response = request->beginResponseStream("text/html");
          response->printf("<meta charset='UTF-8'> <link rel='icon' type='image/x-icon' href='http://sanusb.blogspot.com.br/favicon.ico'/>");
          response->printf("<h2>Profile Name: %s </h2>", Profile);                              
