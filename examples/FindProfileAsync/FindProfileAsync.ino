@@ -1,7 +1,18 @@
 /*
 If you are on the same network and do not know the last profile used, enter the IP in a browser to find out the profile name  
 Tutorial: https://www.youtube.com/watch?v=TP7psRuSwrM and https://www.youtube.com/watch?v=En_hFO5f4U8
- */
+
+The dependencies of the AsyncIOT tool are the Async libraries. For ESP8266 are ESPAsyncTCP and ESPAsyncWebServer at:
+https://github.com/me-no-dev/ESPAsyncTCP
+https://github.com/me-no-dev/ESPAsyncWebServer
+
+For ESP32 are AsyncTCP and the same ESPAsyncWebServer at:
+https://github.com/me-no-dev/AsyncTCP
+https://github.com/me-no-dev/ESPAsyncWebServer
+
+To install all the libraries, including https://github.com/SanUSB/EspCloudUpdate , follow the steps: Arduino IDE -> Sketch 
+-> Include Library -> Add .zip Libraries.
+*/
 //***************This data must be filled in by the user*******************************
 const char* Profile = "----------";  // The same profile name on http://sanusb.org/espupdate
 const char* ssid = "-----------";   // Wifi 
