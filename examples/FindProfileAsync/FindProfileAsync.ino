@@ -1,5 +1,6 @@
 /*
 If you are on the same network and do not know the last profile used, enter the IP in a browser to find out the profile name  
+Tutorial: https://www.youtube.com/watch?v=TP7psRuSwrM and https://www.youtube.com/watch?v=En_hFO5f4U8
  */
 //***************This data must be filled in by the user*******************************
 const char* Profile = "----------";  // The same profile name on http://sanusb.org/espupdate
