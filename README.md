@@ -46,7 +46,7 @@ In summary, download and install the sample library .zip available on https://gi
 
 After the update of the .bin file is finished and the microcontroller is automatically reset, the new verification code is sent to http://sanusb.org/espupdate/*YourProfile*/ in order to confirm the update on the website.
 
-This project, the loop sketch function is practically free so you can implement your projects and be able to update them in a simple and remote way over the Internet. Tutorial: https://youtu.be/En_hFO5f4U8. Steps illustration:
+This project, the loop sketch function is practically free so you can implement your projects and be able to update them in a simple and remote way over the Internet. Tutorial: https://youtu.be/En_hFO5f4U8. Automatic steps illustration:
 
 ![](https://github.com/SanUSB/EspCloudUpdate/blob/master/examples/EspUpdateRealTime/steps.png)
  
