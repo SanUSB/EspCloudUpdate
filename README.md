@@ -50,4 +50,6 @@ This project, the loop sketch function is practically free so you can implement 
 
 ![](https://github.com/SanUSB/EspCloudUpdate/blob/master/examples/EspUpdateRealTime/steps.png)
  
+Using EspCloudUpdate it is not necessary to open ports on the router or enable firewall permissions.
+
 *Have fun!*
