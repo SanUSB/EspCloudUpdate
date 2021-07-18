@@ -96,7 +96,7 @@ void setup() {
     Serial.print("Error in setInt, ");
     
     }
-    //***********************************************************/
+    //******Set value with http request in the server *************/
     String Jsonconf = String(UrlBase); //upload confirmation
     Jsonconf.concat(Profile);
     Jsonconf.concat("/conf.php?s=");
@@ -110,8 +110,26 @@ void setup() {
     }
     // Read the response.
     String payload = httpClient.getString();
-    //Serial.print("Response HTTP = ");
-    //Serial.println(payload);
+    Serial.print("Response HTTP = ");
+    Serial.println(payload);
+//********Get value from the server (http request)**********
+delay(1000);
+    String Jsonconf1 = String(UrlBase); //upload confirmation
+    Jsonconf1.concat(Profile);
+    Jsonconf1.concat("/view2");
+
+    httpClient.begin(client, Jsonconf1); 
+    httpcode = httpClient.GET();
+    if (httpcode <= 0) {
+    Serial.printf("HTTP error: %s\n", 
+    httpClient.errorToString(httpcode).c_str());
+    }
+    
+    // Read the response.
+    payload = httpClient.getString();
+    Serial.print("view2 value = "); //get the value from view2 file
+    Serial.println(payload);
+delay(2000);
 //***********************************************************/    
   }
   EEPROM.write(addr, (InitialVersionInt%10));
