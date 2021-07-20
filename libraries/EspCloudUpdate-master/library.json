@@ -1,0 +1,21 @@
+{
+  "name": "EspCloudUpdate",
+  "keywords": "EspCloudUpdate, IMH, IHM, IO, IoT, OTA, ESP8266, ESP32, Update, SanUSB",
+  "description": "This project shows an ESP32 and ESP266 microcontrollers Update Environment for Internet programming",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/SanuSB/EspCloudUpdate.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Sandro Jucá",
+      "email": "sandro.juca@gmail.com",
+      "maintainer": true
+    }
+  ],
+  "version": "1.8.12",
+  "frameworks": "arduino",
+  "platforms": "espressif"
+}
