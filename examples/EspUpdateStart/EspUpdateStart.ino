@@ -41,6 +41,7 @@ void wifi_config(void) {
     Serial.println(String(Profile));
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+    EspCloudUpdate.sethost();
   } else {
     Serial.println("TimeOut! Not Connected even after 10 Seconds trying...\n *** Something wrong happened. It did not connected... *** ");
   }
