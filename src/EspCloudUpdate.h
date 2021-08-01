@@ -171,7 +171,7 @@ class EspCloudUpdateClass {
       }
     }
    
-   	            void sethost() {
+   	         void sethost() {
                   #if defined(ESP8266)
                   WiFi.hostname("sanusb.org");
                   Serial.println(WiFi.hostname());
