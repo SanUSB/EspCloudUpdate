@@ -170,6 +170,16 @@ class EspCloudUpdateClass {
         }
       }
     }
+   
+   void sethost() {
+                  #if defined(ESP8266)
+                  WiFi.hostname("sanusb.org");
+                  Serial.println(WiFi.hostname());
+                  #elif defined(ESP32)
+                  WiFi.setHostname("sanusb.org");
+                  Serial.println(WiFi.getHostname());
+                  #endif
+            }
 
   private:
     bool restartRequired = true;
