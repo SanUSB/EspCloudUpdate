@@ -10,8 +10,8 @@ For ESP32 are AsyncTCP and the same ESPAsyncWebServer at:
 https://github.com/me-no-dev/AsyncTCP
 https://github.com/me-no-dev/ESPAsyncWebServer
 
-To install all the libraries, including https://github.com/SanUSB/EspCloudUpdate , follow the steps: Arduino IDE -> Sketch 
--> Include Library -> Add .zip Libraries.
+To install all the libraries, including https://github.com/SanUSB/EspCloudUpdate, follow the steps: Arduino IDE -> Sketch 
+-> Include Library -> Add .zip Libraries. See also https://github.com/SanUSB/AsyncIOT.
 */
 //***************This data must be filled in by the user*******************************
 const char* Profile = "----------";  // The same profile name on http://sanusb.org/espupdate
