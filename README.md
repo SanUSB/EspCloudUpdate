@@ -1,5 +1,8 @@
 # EspCloudUpdate [![N|Solid](http://sanusb.blogspot.com.br/favicon.ico)](http://sanusb.org/)
 
+https://ingenius.ups.edu.ec/index.php/ingenius/article/view/6294/5636
+https://ingenius.ups.edu.ec/index.php/ingenius/article/view/6294/5637
+
 This project for all shows an ESP32 and ESP8266 microcontrollers Update Environment for Internet programming with same generic sketch using the website  [sanusb.org/espupdate](http://sanusb.org/espupdate). In this project, the free version of Firebase (Google JSON objects Database) was implemented to generate the cloud update trigger for .bin files. 
 
 The update (OTA) transmits the compiled binary *.bin* files via Internet. To generate a .bin file from your sketch, go to Sketch menu of the Arduino IDE > Export compiled Binary. To perform this cloud firmware update, the users need to write in the sketch only the Wifi ssid, the password and the same name as the profile entered on the site and when uploading the .bin to site, remote firmware update of ESP microcontrollers via the Internet takes place. The user profile name entered on the website [sanusb.org/espupdate](http://sanusb.org/espupdate) may be alphanumeric (for example: sandro190575 or sandrojuca).
